@@ -21,13 +21,15 @@ In preparing the College Scorecard dataset for Loan Repayment Prediction, we met
 
 Next, we further refined the dataset by conducting a thorough correlation analysis. By utilizing both correlation plots and heat maps, we assessed the relationships between each feature and the target variable. We established a threshold to select only those features with an absolute correlation close to or exceeding 0.5. This analysis resulted in the successful filtration of 9 features, ultimately retaining 7 key features for our predictive modeling. These final features include "HIGHDEG," "MD_EARN_WNE_P8," "DEP_INC_AVG," "UG25ABV," "PAR_ED_PCT_PS," "RPY_3YR_RT," and "ATDCOST."
 
-- Before Feature Selection 
+- Before Feature Selection
 ![](https://github.com/VEG0258/QTM347-Final-Project/blob/main/Data%20Cleaning/Before_cleaning_corr.png)
 ![](https://github.com/VEG0258/QTM347-Final-Project/blob/main/Data%20Cleaning/Before_cleaning_heatmap.png)
 - After Feature Selection 
 ![](https://github.com/VEG0258/QTM347-Final-Project/blob/main/Data%20Cleaning/After_cleaning_corr.png)
 ![](https://github.com/VEG0258/QTM347-Final-Project/blob/main/Data%20Cleaning/After_cleaning_heatmap.png)
 ### Problem Setup
+For our analysis of the College Scorecard dataset, we utilized Python Version 3.9. Besides basic packages, such as Pandas, NumPy, Matplotlib, and Seaborn, for data manipulation, numerical calculations, and visualization, our modeling process leveraged Scikit-learn to provide comprehensive functionalities for implementing and evaluating machine learning models. Additionally, FancyImpute was used for advanced imputation methods like IterativeImputer to ensure robust handling of missing data across the dataset. The specific Methodologies utilized are listed below:
+
 - ##### Lasso/Ridge Regression:
   - We will apply regularization techniques to refine our regression models. These techniques are particularly useful in preventing overfitting and improving model generalizability by penalizing the coefficients of the regression model.
 Lambda Values: We will test a range of lambda values from 5 to -5, with a total of 101 points evenly distributed across this range.
@@ -40,8 +42,7 @@ Lambda Values: We will test a range of lambda values from 5 to -5, with a total 
 - ##### Decision Trees:
   - Decision Trees will be explored for their intuitive understanding and ease of use. By partitioning the space into regions that minimize the prediction error, they offer clear insights into feature importance and decision-making.
   - Maximum Depth: We will vary the maximum depth from 1 to 10 to understand the depth at which the trees best generalize from the training data without overfitting.
- 
-For our analysis of the College Scorecard dataset, we utilized Python Version 3.9. Besides basic packages, such as Pandas, NumPy, Matplotlib, and Seaborn, for data manipulation, numerical calculations, and visualization, our modeling process leveraged Scikit-learn to provide comprehensive functionalities for implementing and evaluating machine learning models such as Lasso/Ridge Regression, K-Nearest Neighbors, Decision Trees. Additionally, FancyImpute was used for advanced imputation methods like IterativeImputer to ensure robust handling of missing data across the dataset. 
+
 
 ## Reference
 Chetty, Raj, et al. NBER WORKING PAPER SERIES MOBILITY REPORT CARDS: THE ROLE of COLLEGES in INTERGENERATIONAL MOBILITY. 2017.
