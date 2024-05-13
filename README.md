@@ -9,6 +9,7 @@ Hilbert et al. (2021) provide a comprehensive overview of supervised and unsuper
 Recent studies further illuminate factors affecting repayment. For instance, an arXiv paper used an Elastic Net model for linear regression to predict repayment rates (Luo and Zhang). So we included Ridge and Lasso regression into our study.  
 ### Motivation
 The issue of student debt is socio-economic, with significant implications for equitable access to higher education. Understanding repayment dynamics across demographic groups will inform policies that ensure education remains accessible and financially sustainable. By identifying key repayment predictors, stakeholders can tailor aid and forgiveness schemes to better assist those in need, ensuring an equitable educational landscape.
+## Set Up
 ### Dataset Description
 We used data from https://www.kaggle.com/datasets/kaggle/college-scorecard. It provides a detailed examination of higher education institutions across the U.S. in financial and student outcomes aspects. It includes 6,543 rows and 3,232 columns, offering key metrics such as costs, debts, and post-college earnings for students who received federal financial aid. 
 ### Data Cleaning
