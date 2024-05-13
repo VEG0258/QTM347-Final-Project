@@ -44,6 +44,57 @@ For our analysis of the College Scorecard dataset, we utilized Python Version 3.
   - Maximum Depth: We will vary the maximum depth from 1 to 10 to understand the depth at which the trees best generalize from the training data without overfitting.
 
 
+
+
+
+
+## Results & Discussions
+
+#### 1.Decision Trees
+<img width="589" alt="Screen Shot 2024-05-12 at 11 42 06 PM" src="https://github.com/VEG0258/QTM347-Final-Project/assets/122936414/00d58d03-f52f-45b6-b258-4c69e094a8a0">
+
+MSE of the prediction is 0.004899117531748272 R^2 is 0.8292083319661898.
+
+#### 2.Linear & Lasso & Ridge
+- ##### Linear Regression:
+Training MSE: 0.006835527011618515
+Test MSE: 0.0076592199759009435
+
+- ##### Ridge：
+Train MSE using optimal λ: 0.006835527040365417
+Test MSE using optimal λ: 0.007659202420207112
+
+- ##### Lasso:
+Train MSE using optimal λ: 0.006835691644612117
+Test MSE using optimal λ: 0.007657329808167464
+
+Coefficients comparison:
+<img width="600" alt="Screen Shot 2024-05-12 at 11 43 40 PM" src="https://github.com/VEG0258/QTM347-Final-Project/assets/122936414/e96aca06-bda6-4ad8-9aca-fcae6a8e2e0c">
+
+#### 3. K-Nearest Neighbors
+
+<img width="610" alt="Screen Shot 2024-05-12 at 11 44 20 PM" src="https://github.com/VEG0258/QTM347-Final-Project/assets/122936414/a64f5453-5df7-4f36-bb7c-4d2311a1f2d0">
+
+- ##### Parameter Choices:
+- configured with a range from k=1 to k=16  and 5-fold cross-validation 
+
+The best k by MSE is 12, with the lowest MSE being approximately 0.0007177.
+The best k by R² is 12, with an R² of approximately 0.2928.
+
+
+
+
+## Conclusion
+
+- ##### Decision Tree:
+- With an MSE of  0.004899  and the highest R² of 0.829 , the Decision Tree outperforms the regression models in terms of both lower error and higher explanatory power.
+- ##### KNN:
+- The KNN model with k = 12  has the lowest MSE of all the models at 0.0007177, indicating very high accuracy in its predictions. However, its explanatory power as measured by R² is moderate at 0.2928.
+- ##### Regression Models:
+- Lasso, Ridge, and Linear Regression have very similar MSEs, all around 0.009302. These values are higher than those for the Decision Tree and KNN, which means they are less accurate in terms of prediction error. However, they still offer valuable insights due to their interpretability and the way they handle variable selection (Lasso) and multicollinearity (Ridge).
+
+In summary, the Decision Tree appears to be the most suitable model considering both predictive accuracy (low MSE) and explanatory power (high R²). KNN, despite its lower MSE, falls behind in explanatory power, and while the regression models show less prediction accuracy, they still provide valuable interpretability, especially regarding the influence of individual features.
+
 ## Reference
 Chetty, Raj, et al. NBER WORKING PAPER SERIES MOBILITY REPORT CARDS: THE ROLE of COLLEGES in INTERGENERATIONAL MOBILITY. 2017.
 
