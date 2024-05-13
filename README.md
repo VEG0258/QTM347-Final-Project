@@ -40,7 +40,8 @@ Lambda Values: We will test a range of lambda values from 5 to -5, with a total 
 - ##### Decision Trees:
   - Decision Trees will be explored for their intuitive understanding and ease of use. By partitioning the space into regions that minimize the prediction error, they offer clear insights into feature importance and decision-making.
   - Maximum Depth: We will vary the maximum depth from 1 to 10 to understand the depth at which the trees best generalize from the training data without overfitting.
-
+ 
+For our analysis of the College Scorecard dataset, we utilized Python Version 3.9. Besides basic packages, such as Pandas, NumPy, Matplotlib, and Seaborn, for data manipulation, numerical calculations, and visualization, our modeling process leveraged Scikit-learn to provide comprehensive functionalities for implementing and evaluating machine learning models such as Lasso/Ridge Regression, K-Nearest Neighbors, Decision Trees. Additionally, FancyImpute was used for advanced imputation methods like IterativeImputer to ensure robust handling of missing data across the dataset. 
 
 ## Reference
 Chetty, Raj, et al. NBER WORKING PAPER SERIES MOBILITY REPORT CARDS: THE ROLE of COLLEGES in INTERGENERATIONAL MOBILITY. 2017.
