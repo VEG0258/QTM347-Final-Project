@@ -9,9 +9,10 @@ Hilbert et al. (2021) provide a comprehensive overview of supervised and unsuper
 Recent studies further illuminate factors affecting repayment. For instance, an arXiv paper used an Elastic Net model for linear regression to predict repayment rates (Luo and Zhang). So we included Ridge and Lasso regression into our study.  
 ### Motivation
 The issue of student debt is socio-economic, with significant implications for equitable access to higher education. Understanding repayment dynamics across demographic groups will inform policies that ensure education remains accessible and financially sustainable. By identifying key repayment predictors, stakeholders can tailor aid and forgiveness schemes to better assist those in need, ensuring an equitable educational landscape.
+
 ## Set Up
 ### Dataset Description
-We used data from https://www.kaggle.com/datasets/kaggle/college-scorecard. It provides a detailed examination of higher education institutions across the U.S. in financial and student outcomes aspects. It includes 6,543 rows and 3,232 columns, offering key metrics such as costs, debts, and post-college earnings for students who received federal financial aid. 
+We used data from https://www.kaggle.com/datasets/kaggle/college-scorecard. It provides a detailed examination of higher education institutions across the U.S. in financial and student outcomes aspects. It includes 6,543 rows and 3,232 columns, offering key metrics such as costs, debts, and post-college earnings for students who received federal financial aid. Amoung those 3232 columns, we picked 'RPY_3YR_RT' (Fraction of cohort who are not in default and whose loan balances have declined for three years) as the target variable.
 ### Data Cleaning
 In preparing the College Scorecard dataset for Loan Repayment Prediction, we meticulously refined the initial set of 3,232 features down to 16 essential features. This reduction was achieved by eliminating non-numeric columns that are not relevant to university institutions, discarding columns unrelated to earnings, and synthesizing insights from related research. Additionally, we consolidated financial metrics by combining 'COSTT4_A' (Average cost of attendance for academic year institutions) and 'COSTT4_P' (Average cost of attendance for program-year institutions) into a single feature, 'ATDCOST'. To address missing values, we implemented the IterativeImputer package, which initializes missing entries with an initial guess (typically the mean or median) and subsequently employs the Bayesian Ridge estimator to model each feature with missing data as a dependent variable while utilizing the other features as predictors. This approach ensures a robust dataset that is primed for developing accurate predictive models, particularly with regards to SAT data. The IterativeImputer successfully filled 5,371 NaN values out of 6,543 rows while preserving the original distribution characteristics of the SAT scores.
 
@@ -26,7 +27,20 @@ Next, we further refined the dataset by conducting a thorough correlation analys
 - After Feature Selection 
 ![](https://github.com/VEG0258/QTM347-Final-Project/blob/main/Data%20Cleaning/After_cleaning_corr.png)
 ![](https://github.com/VEG0258/QTM347-Final-Project/blob/main/Data%20Cleaning/After_cleaning_heatmap.png)
-### Models
+### Problem Setup
+- ##### Lasso/Ridge Regression:
+  - We will apply regularization techniques to refine our regression models. These techniques are particularly useful in preventing overfitting and improving model generalizability by penalizing the coefficients of the regression model.
+Lambda Values: We will test a range of lambda values from 5 to -5, with a total of 101 points evenly distributed across this range.
+- ##### K-Nearest Neighbors (KNN):
+  - KNN will be used to predict outcomes based on the closest data points in the feature space.
+  - K Values: We will evaluate K values from 1 to 15 to find the optimal number of nearest neighbors that balances bias and variance.
+- ##### Partial Least Squares (PLS):
+  - PLS is suitable for datasets with many collinear variables because it projects the predictors into a new space formed by orthogonal components, which are then used to predict the response.
+  - Lambda Values: We will test a range of lambda values from 5 to -5, with a total of 101 points evenly distributed across this range.
+- ##### Decision Trees:
+  - Decision Trees will be explored for their intuitive understanding and ease of use. By partitioning the space into regions that minimize the prediction error, they offer clear insights into feature importance and decision-making.
+  - Maximum Depth: We will vary the maximum depth from 1 to 10 to understand the depth at which the trees best generalize from the training data without overfitting.
+
 
 ## Reference
 Chetty, Raj, et al. NBER WORKING PAPER SERIES MOBILITY REPORT CARDS: THE ROLE of COLLEGES in INTERGENERATIONAL MOBILITY. 2017.
