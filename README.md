@@ -9,8 +9,10 @@ Hilbert et al. (2021) provide a comprehensive overview of supervised and unsuper
 Recent studies further illuminate factors affecting repayment. For instance, an arXiv paper used an Elastic Net model for linear regression to predict repayment rates (Luo and Zhang). So we included Ridge and Lasso regression into our study.  
 ### Motivation
 The issue of student debt is socio-economic, with significant implications for equitable access to higher education. Understanding repayment dynamics across demographic groups will inform policies that ensure education remains accessible and financially sustainable. By identifying key repayment predictors, stakeholders can tailor aid and forgiveness schemes to better assist those in need, ensuring an equitable educational landscape.
-
-
+### Dataset Description
+We used data from https://www.kaggle.com/datasets/kaggle/college-scorecard. It provides a detailed examination of higher education institutions across the U.S. in financial and student outcomes aspects. It includes 6,543 rows and 3,232 columns, offering key metrics such as costs, debts, and post-college earnings for students who received federal financial aid. 
+### Data Cleaning
+In preparing the College Scorecard dataset for Loan Repayment Prediction, we meticulously refined the initial set of 3,232 features down to 16 essential features. This reduction was achieved by eliminating non-numeric columns that are not relevant to university institutions, discarding columns unrelated to earnings, and synthesizing insights from related research. Additionally, we consolidated financial metrics by combining 'COSTT4_A' (Average cost of attendance for academic year institutions) and 'COSTT4_P' (Average cost of attendance for program-year institutions) into a single feature, 'ATDCOST'. To address missing values, we implemented the IterativeImputer package, which initializes missing entries with an initial guess (typically the mean or median) and subsequently employs the Bayesian Ridge estimator to model each feature with missing data as a dependent variable while utilizing the other features as predictors. This approach ensures a robust dataset that is primed for developing accurate predictive models.
 
 ## Reference
 Chetty, Raj, et al. NBER WORKING PAPER SERIES MOBILITY REPORT CARDS: THE ROLE of COLLEGES in INTERGENERATIONAL MOBILITY. 2017.
