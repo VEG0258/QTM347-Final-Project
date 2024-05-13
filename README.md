@@ -32,7 +32,7 @@ For our analysis of the College Scorecard dataset, we utilized Python Version 3.
 
 - ##### Lasso/Ridge Regression:
   - We will apply regularization techniques to refine our regression models. These techniques are particularly useful in preventing overfitting and improving model generalizability by penalizing the coefficients of the regression model.
-Lambda Values: We will test a range of lambda values from 5 to -5, with a total of 101 points evenly distributed across this range.
+  - Lambda Values: We will test a range of lambda values from 5 to -5, with a total of 101 points evenly distributed across this range.
 - ##### K-Nearest Neighbors (KNN):
   - KNN will be used to predict outcomes based on the closest data points in the feature space.
   - K Values: We will evaluate K values from 1 to 15 to find the optimal number of nearest neighbors that balances bias and variance.
